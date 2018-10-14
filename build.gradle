@@ -27,6 +27,10 @@ configurations.all {
     exclude group: "org.springframework.boot:spring-boot-starter-test", module: "junit:junit"
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
     implementation('org.springframework.boot:spring-boot-starter-webflux')
