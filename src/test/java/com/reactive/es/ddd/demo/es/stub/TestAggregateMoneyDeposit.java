@@ -1,6 +1,7 @@
 package com.reactive.es.ddd.demo.es.stub;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.UUID;
 
 public class TestAggregateMoneyDeposit extends TestEvent {
@@ -20,5 +21,23 @@ public class TestAggregateMoneyDeposit extends TestEvent {
 
     public BigDecimal getAmount() {
         return amount;
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        final TestAggregateMoneyDeposit that = (TestAggregateMoneyDeposit) o;
+        return Objects.equals(amount, that.amount) && Objects.equals(aggregateId, that.aggregateId);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(aggregateId, amount);
     }
 }

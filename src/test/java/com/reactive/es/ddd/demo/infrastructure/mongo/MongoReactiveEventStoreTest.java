@@ -62,9 +62,9 @@ class MongoReactiveEventStoreTest {
 
         // then
         StepVerifier.create(returned)
-            .expectNextMatches(r -> r instanceof TestAggregateCreated && r.getAggregateId().equals(ID))
-            .expectNextMatches(r -> r instanceof TestAggregateMoneyDeposit && r.getAggregateId().equals(ID))
-            .expectNextMatches(r -> r instanceof TestAggregateMoneyWithdrawn && r.getAggregateId().equals(ID))
+            .expectNext(event1)
+            .expectNext(event2)
+            .expectNext(event3)
             .verifyComplete();
     }
 
