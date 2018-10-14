@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Event {
 
-    private UUID aggregateId;
+    protected UUID aggregateId;
     private LocalDateTime createdAt;
 
     public Event(final UUID aggregateId) {
