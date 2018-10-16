@@ -12,3 +12,15 @@ Project resolves real problem with bank accounts and payments. **Under developme
 - Load domain objects from snapshots
 - REST API calls with CQRS
 
+## Local run
+
+#### Requirements
+
+- Java 11 to build project - build using docker image is scheduled
+- Docker
+- Docker-compose which supports version '3' of docker-compose.yml file
+
+```bash
+./gradlew composeUp
+```
+

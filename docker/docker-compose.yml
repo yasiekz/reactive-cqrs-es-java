@@ -1,6 +1,15 @@
 version: '3'
 
 services:
+  app:
+    image: reactive_es_demo
+    build:
+      context: ../
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8080:8080"
+
   mongo:
     image: mongo
     restart: always
