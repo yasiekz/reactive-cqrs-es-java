@@ -7,7 +7,7 @@ services:
     - docker
 
 script:
-    - ./gradlew test
+    - ./gradlew check
     - ./gradlew jacocoTestReport
 
 after_success:
