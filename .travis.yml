@@ -1,0 +1,14 @@
+language: java
+jdk:
+  - oraclejdk11
+
+sudo: required
+services:
+    - docker
+
+script:
+    - ./gradlew check
+    - ./gradlew jacocoTestReport
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
