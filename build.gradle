@@ -26,6 +26,7 @@ apply plugin: 'jacoco'
 group = 'com.reactive.es.ddd'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 11
+targetCompatibility = 11
 
 repositories {
     mavenCentral()
@@ -63,6 +64,10 @@ gradle.taskGraph.afterTask { Task task, TaskState state ->
     } else {
         println "done"
     }
+}
+
+jacoco {
+    toolVersion = "0.8.2"
 }
 
 dockerCompose {
